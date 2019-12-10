@@ -24,79 +24,96 @@
          </p>
        </div>
      </div>
-     <script>
-      function on() {
-        document.getElementById("overlay").style.display = "block";
-      }
-
-      function off() {
-        document.getElementById("overlay").style.display = "none";
-      }
-    </script>
-     <div class="overlay">
-       <div class="text">
-         Overlay
-       </div>
-     </div>
        <div class="row">
          <div class="grid-container">
            <div class="column">
-             <img src="img/aaron-burden-GVnUVP8cs1o-unsplash.jpg" onclick="on()">
+             <img class="myImages" id="myImg"src="img/aaron-burden-GVnUVP8cs1o-unsplash.jpg" >
            </div>
 
            <div class="column">
-             <img src="img/amanda-phung-1w2xsyc2wwI-unsplash.jpg">
+             <img class="myImages" id="myImg"src="img/amanda-phung-1w2xsyc2wwI-unsplash.jpg" >
            </div>
 
            <div class="column">
-             <img src="img/annie-spratt-KCQz_b2Hgi8-unsplash.jpg">
+             <img class="myImages" id="myImg" src="img/annie-spratt-KCQz_b2Hgi8-unsplash.jpg">
            </div>
 
            <div class="column">
-             <img src="img/casey-horner-4rDCa5hBlCs-unsplash.jpg">
+             <img class="myImages" id="myImg" src="img/casey-horner-4rDCa5hBlCs-unsplash.jpg">
            </div>
 
            <div class="column">
-             <img src="img/ivana-cajina-MBkQKiH14ng-unsplash.jpg">
+             <img class="myImages" id="myImg" src="img/ivana-cajina-MBkQKiH14ng-unsplash.jpg">
            </div>
 
            <div class="column">
-             <img src="img/joey-kyber-sFLVTqNzG2I-unsplash.jpg">
+             <img class="myImages" id="myImg" src="img/joey-kyber-sFLVTqNzG2I-unsplash.jpg">
            </div>
 
            <div class="column">
-             <img src="img/justin-kauffman-a8lTjWJJgLA-unsplash.jpg">
+             <img class="myImages" id="myImg" src="img/justin-kauffman-a8lTjWJJgLA-unsplash.jpg">
            </div>
 
            <div class="column">
-             <img src="img/luca-bravo-ny6qxqv_m04-unsplash.jpg">
+             <img class="myImages" id="myImg" src="img/luca-bravo-ny6qxqv_m04-unsplash.jpg">
            </div>
 
            <div class="column">
-             <img src="img/lukasz-szmigiel-jFCViYFYcus-unsplash.jpg">
+             <img class="myImages" id="myImg" src="img/lukasz-szmigiel-jFCViYFYcus-unsplash.jpg">
            </div>
 
            <div class="column">
-             <img src="img/redcharlie-k2zWqv_yfNM-unsplash.jpg">
+             <img class="myImages" id="myImg" src="img/redcharlie-k2zWqv_yfNM-unsplash.jpg">
            </div>
 
            <div class="column">
-             <img src="img/shifaaz-shamoon-oR0uERTVyD0-unsplash.jpg">
+             <img class="myImages" id="myImg" src="img/shifaaz-shamoon-oR0uERTVyD0-unsplash.jpg">
            </div>
 
            <div class="column">
-             <img src="img/sora-sagano-Dksk8szLRN0-unsplash.jpg">
+             <img class="myImages" id="myImg" src="img/sora-sagano-Dksk8szLRN0-unsplash.jpg">
            </div>
 
            <div class="column">
-             <img src="img/vincent-van-zalinge-_d0zgyMmYT8-unsplash.jpg">
+             <img class="myImages" id="myImg" src="img/vincent-van-zalinge-_d0zgyMmYT8-unsplash.jpg">
            </div>
 
            <div class="column">
-             <img src="img/vincent-van-zalinge-vUNQaTtZeOo-unsplash.jpg">
+             <img class="myImages" id="myImg" src="img/vincent-van-zalinge-vUNQaTtZeOo-unsplash.jpg">
            </div>
          </div>
        </div>
+       <!-- The Modal -->
+<div id="myModal" class="modal">
+<span class="close">&times;</span>
+<img class="modal-content" id="img01">
+<div id="caption"></div>
+       <script>
+       // create references to the modal...
+ var modal = document.getElementById('myModal');
+ // to all images -- note I'm using a class!
+ var images = document.getElementsByClassName('myImages');
+ // the image in the modal
+ var modalImg = document.getElementById("img01");
+ // and the caption in the modal
+ var captionText = document.getElementById("caption");
 
-  </body>
+ // Go through all of the images with our custom class
+ for (var i = 0; i < images.length; i++) {
+   var img = images[i];
+   // and attach our click listener for this image.
+   img.onclick = function(evt) {
+     modal.style.display = "block";
+     modalImg.src = this.src;
+     captionText.innerHTML = this.alt;
+   }
+ }
+
+ var span = document.getElementsByClassName("close")[0];
+
+ span.onclick = function() {
+   modal.style.display = "none";
+ }
+     </script>
+   </body>
 </html>
